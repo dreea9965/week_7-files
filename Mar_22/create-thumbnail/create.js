@@ -2,33 +2,37 @@ var fs = require('fs');
 var gm = require('gm');
 var async = require('async');
 
-var fs = require('fs');
-var gm = require('gm');
-var async = require('async');
+
+
+function createThumbnails(dir, callback){
+
 
 function resizeImage(filename, callback) {
   gm(filename)
     .resize(240, 240)
     .write(filename, callback);
-}
 
-fs.readdir('images', function(err, files) {
+fs.readdir('./images', function(err, files) {
   if (err) {
-    console.log(err.message);
+    callback(err.message);
     return;
   }
   console.log('before', files);
   files = files.map(function(filename) {
-    return 'images/' + filename;
+    return './images/' + filename;
   });
   console.log('after', files);
   async.each(files, resizeImage, function(err) {
     if (err) {
-      console.log(err.message);
+      callback(err.message);
       return;
     }
     console.log('It worked.');
   });
 });
 
-module.exports = resizeImage;
+}
+
+}
+
+exports.createThumbnails = createThumbnails;
