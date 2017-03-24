@@ -1,3 +1,17 @@
+// var filename = 'css-tricks.html';
+//
+// request(url)
+//   .then(function(html) {
+//     return fs.writeFile(filename, html);
+//   })
+//   .then(function() {
+//     console.log('Worked');
+//   })
+//   .catch(function(err) {
+//     console.log(err.message);
+//   });
+
+
 var request = require('request-promise');
 var fs = require('fs-promise');
 

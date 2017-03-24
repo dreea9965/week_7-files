@@ -11,17 +11,6 @@ var urls = [
   'https://en.wikipedia.org/wiki/Google_Chrome'
 ];
 
-// var mapped = urls.map(function(url){
-//   return request.get(url);
-// });
-//
-// Promise.all(mapped)
-//   .then(function(arrayHTML){
-//     console.log(arrayHTML);
-//   })
-//   .catch(function(err) {
-//     console.log('Something went wrong because', err.message);
-//   });
 
 
   Promise.all(mapped)
